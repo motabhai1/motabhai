@@ -1,0 +1,718 @@
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<link rel="stylesheet"
+  href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700;800;900&amp;display=swap">
+<style>
+  .lbh-lp,
+  .lbh-lp * {
+    box-sizing: border-box !important;
+    margin: 0;
+    padding: 0;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .lbh-lp {
+    --lbh-bg: #010A41;
+    --lbh-card: #0a1650;
+    --lbh-card2: #111d5c;
+    --lbh-border: rgba(100, 130, 255, 0.22);
+    --lbh-purple: #9333ea;
+    --lbh-pink: #ec4899;
+    --lbh-gold: #fbbf24;
+    --lbh-gold-l: #fde68a;
+    --lbh-green: #22c55e;
+    --lbh-text: #ffffff;
+    --lbh-dim: #aabfba;
+    --lbh-dim2: #728885;
+    font-family: 'Figtree', sans-serif !important;
+    background: var(--lbh-bg) !important;
+    color: var(--lbh-text) !important;
+    line-height: 1.5 !important;
+    overflow-x: hidden;
+    max-width: 560px;
+    margin: 0 auto !important;
+    position: relative;
+  }
+
+  .lbh-lp a {
+    text-decoration: none !important;
+    color: inherit;
+  }
+
+  .lbh-lp button {
+    font-family: 'Figtree', sans-serif !important;
+    cursor: pointer;
+    border: none;
+    background: none;
+  }
+
+  .lbh-lp img {
+    max-width: 100%;
+    display: block;
+  }
+
+  .lbh-reveal {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity .6s ease, transform .6s ease;
+  }
+
+  .lbh-reveal.lbh-in {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .lbh-section {
+    padding: 22px 16px;
+  }
+
+  .lbh-sec-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 13px;
+  }
+
+  .lbh-sec-title {
+    font-size: 16.5px !important;
+    font-weight: 800 !important;
+    color: #fff !important;
+    display: flex;
+    align-items: center;
+    gap: 7px;
+  }
+
+  .lbh-sec-all {
+    font-size: 12.5px !important;
+    font-weight: 700 !important;
+    color: var(--lbh-dim) !important;
+  }
+
+  /* ===== Hero (trust-led) ===== */
+  .lbh-hero2 {
+    padding: 32px 16px 6px !important;
+  }
+
+  .lbh-hero2-eyebrow {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 11.5px !important;
+    font-weight: 800 !important;
+    letter-spacing: 1.5px !important;
+    text-transform: uppercase;
+    color: var(--lbh-gold-l) !important;
+    margin-bottom: 16px;
+  }
+
+  .lbh-hero2-dash {
+    width: 26px;
+    height: 2px;
+    background: var(--lbh-gold-l) !important;
+    display: inline-block;
+    border-radius: 2px;
+  }
+
+  .lbh-hero2-title {
+    font-size: 26px !important;
+    font-weight: 900 !important;
+    line-height: 1.2 !important;
+    color: #fff !important;
+    margin-bottom: 10px !important;
+    letter-spacing: -0.4px;
+  }
+
+  .lbh-hero2-gold {
+    font-size: 20px !important;
+    font-weight: 900 !important;
+    color: var(--lbh-gold-l) !important;
+    margin-bottom: 12px !important;
+  }
+
+  .lbh-hero2-sub {
+    font-size: 14px !important;
+    color: var(--lbh-dim) !important;
+    margin-bottom: 20px !important;
+    max-width: 92%;
+  }
+
+  .lbh-hero2-btn {
+    background: var(--lbh-green) !important;
+    color: #06210f !important;
+    font-weight: 800 !important;
+    font-size: 14.5px !important;
+    padding: 13px 24px !important;
+    border-radius: 100px !important;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    width: fit-content;
+  }
+
+  /* ===== Bonus cards ===== */
+  .lbh-bonus-row {
+    display: flex;
+    gap: 10px;
+    overflow-x: auto;
+    scroll-snap-type: x proximity;
+    scrollbar-width: none;
+    padding-bottom: 4px;
+  }
+
+  .lbh-bonus-row::-webkit-scrollbar {
+    display: none;
+  }
+
+  .lbh-bonus-card {
+    flex: 0 0 250px;
+    scroll-snap-align: start;
+    border-radius: 14px;
+    padding: 16px;
+    position: relative;
+    overflow: hidden;
+    min-height: 172px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .lbh-bonus-tag {
+    font-size: 11px !important;
+    font-weight: 700 !important;
+    color: rgba(255, 255, 255, 0.85) !important;
+    text-transform: uppercase;
+    letter-spacing: .5px;
+    margin-bottom: 8px;
+  }
+
+  .lbh-bonus-title2 {
+    font-size: 19px !important;
+    font-weight: 900 !important;
+    color: #fff !important;
+    line-height: 1.22 !important;
+    margin-bottom: auto;
+  }
+
+  .lbh-bonus-avail {
+    font-size: 10.5px !important;
+    font-weight: 800 !important;
+    color: #fff !important;
+    background: rgba(0, 0, 0, 0.22);
+    display: inline-flex;
+    padding: 6px 10px;
+    border-radius: 8px;
+    margin: 12px 0 10px;
+    width: fit-content;
+    text-transform: uppercase;
+    letter-spacing: .3px;
+  }
+
+  .lbh-bonus-btns {
+    display: flex;
+    gap: 8px;
+  }
+
+  .lbh-bonus-btn-main {
+    background: var(--lbh-gold) !important;
+    color: #3f2d03 !important;
+    font-weight: 800 !important;
+    font-size: 12.5px !important;
+    padding: 9px 14px !important;
+    border-radius: 100px !important;
+  }
+
+  .lbh-bonus-btn-out {
+    border: 1.5px solid rgba(255, 255, 255, 0.5) !important;
+    color: #fff !important;
+    font-weight: 700 !important;
+    font-size: 12.5px !important;
+    padding: 9px 14px !important;
+    border-radius: 100px !important;
+  }
+
+  .lbh-bonus-btn-light {
+    background: #fff !important;
+    color: #15803d !important;
+    font-weight: 800 !important;
+    font-size: 12.5px !important;
+    padding: 9px 16px !important;
+    border-radius: 100px !important;
+  }
+
+  /* ===== Quick icon grid (2 rows x 4) - now image grid ===== */
+  .lbh-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+  }
+
+  .lbh-grid-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    background: var(--lbh-card);
+    border: 1px solid var(--lbh-border);
+    border-radius: 12px;
+    padding: 6px;
+    transition: transform .15s, border-color .2s;
+    overflow: hidden;
+  }
+
+  .lbh-grid-item:active {
+    transform: scale(0.95);
+    border-color: rgba(251, 191, 36, 0.5);
+  }
+
+  .lbh-grid-item img {
+    width: 100%;
+    aspect-ratio: 1/1;
+    object-fit: contain;
+    border-radius: 8px;
+    background: var(--lbh-card2);
+    padding: 4px;
+  }
+
+  /* ===== Card scroll rows ===== */
+  .lbh-row {
+    display: flex;
+    gap: 10px;
+    overflow-x: auto;
+    scroll-snap-type: x proximity;
+    padding-bottom: 4px;
+    scrollbar-width: none;
+  }
+
+  .lbh-row::-webkit-scrollbar {
+    display: none;
+  }
+
+  .lbh-card {
+    flex: 0 0 128px;
+    scroll-snap-align: start;
+    border-radius: 12px;
+    overflow: hidden;
+    background: var(--lbh-card);
+    border: 1px solid var(--lbh-border);
+    transition: transform .15s, border-color .2s;
+  }
+
+  .lbh-card:active {
+    transform: scale(0.96);
+    border-color: rgba(251, 191, 36, 0.5);
+  }
+
+  .lbh-card img {
+    width: 100%;
+    aspect-ratio: 3/4;
+    object-fit: contain;
+    background: var(--lbh-card2);
+    padding: 6px;
+  }
+
+  .lbh-card-grad {
+    aspect-ratio: 3/4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 34px;
+  }
+
+  .lbh-card-label {
+    display: block;
+    padding: 8px 9px 9px;
+    font-size: 11.5px !important;
+    font-weight: 700 !important;
+    color: #fff !important;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .lbh-card-sub {
+    display: block;
+    padding: 0 9px 9px;
+    margin-top: -6px;
+    font-size: 10px !important;
+    font-weight: 600 !important;
+    color: var(--lbh-gold-l) !important;
+  }
+
+  /* ===== Sports icon row ===== */
+  .lbh-sport-row {
+    display: flex;
+    gap: 12px;
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+
+  .lbh-sport-row::-webkit-scrollbar {
+    display: none;
+  }
+
+  .lbh-sport-item {
+    flex: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    width: 58px;
+    text-align: center;
+  }
+
+  .lbh-sport-circle {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    border: 1px solid var(--lbh-border);
+    background: rgba(147, 51, 234, 0.12);
+  }
+
+  .lbh-sport-label {
+    font-size: 10px !important;
+    font-weight: 600 !important;
+    color: var(--lbh-dim) !important;
+  }
+
+  .lbh-rg {
+    text-align: center;
+    padding: 20px 16px 32px !important;
+    font-size: 11px !important;
+    color: var(--lbh-dim2) !important;
+    line-height: 1.6 !important;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .lbh-reveal {
+      transition: none !important;
+      opacity: 1 !important;
+      transform: none !important;
+    }
+  }
+
+  /* ===== Mobile Design Fixes ===== */
+  @media (max-width: 480px) {
+    .lbh-lp {
+      max-width: 100% !important;
+    }
+
+    .lbh-hero2 {
+      padding: 24px 12px 6px !important;
+    }
+
+    .lbh-hero2-title {
+      font-size: 22px !important;
+    }
+
+    .lbh-hero2-gold {
+      font-size: 18px !important;
+    }
+
+    .lbh-hero2-sub {
+      font-size: 13px !important;
+      max-width: 100%;
+    }
+
+    .lbh-hero2-btn {
+      font-size: 13px !important;
+      padding: 12px 20px !important;
+      width: 100%;
+      justify-content: center;
+    }
+
+    .lbh-section {
+      padding: 18px 12px;
+    }
+
+    .lbh-sec-title {
+      font-size: 15px !important;
+    }
+
+    .lbh-bonus-card {
+      flex: 0 0 85vw;
+      min-height: 160px;
+    }
+
+    .lbh-bonus-title2 {
+      font-size: 17px !important;
+    }
+
+    .lbh-grid {
+      gap: 8px;
+    }
+
+    .lbh-grid-item {
+      padding: 4px;
+    }
+
+    .lbh-card {
+      flex: 0 0 110px;
+    }
+
+    .lbh-card-label {
+      font-size: 10.5px !important;
+      padding: 6px 7px 7px;
+    }
+
+    .lbh-sport-circle {
+      width: 44px;
+      height: 44px;
+      font-size: 18px;
+    }
+
+    .lbh-sport-label {
+      font-size: 9.5px !important;
+    }
+
+    .lbh-rg {
+      padding: 16px 12px 24px !important;
+      font-size: 10px !important;
+    }
+  }
+
+  /* Improve touch targets */
+  .lbh-grid-item,
+  .lbh-card,
+  .lbh-sport-item,
+  .lbh-bonus-card {
+    -webkit-tap-highlight-color: rgba(251, 191, 36, 0.15);
+  }
+
+  /* Prevent horizontal scroll on body */
+  .lbh-lp {
+    overflow-x: hidden;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* Smooth scrolling for carousels */
+  .lbh-bonus-row,
+  .lbh-row,
+  .lbh-sport-row {
+    -webkit-overflow-scrolling: touch;
+    scroll-behavior: smooth;
+  }
+</style>
+<div class="lbh-lp">
+
+  <section class="lbh-hero2 lbh-reveal">
+    <div class="lbh-hero2-eyebrow"><span class="lbh-hero2-dash"></span>भारत का विश्वसनीय एक्सचेंज</div>
+    <h1 class="lbh-hero2-title">मोटा भाई की आईडी तुरंत पाएं — 2 मिनट में डिपॉजिट करें, सिर्फ ₹100 से शुरुआत करें।</h1>
+    <div class="lbh-hero2-gold">व्हाट्सएप पर 2 मिनट में</div>
+    <p class="lbh-hero2-sub">मिनटों में अपनी वेरीफाइड आईडी पाएं और भरोसे के साथ खेलें।</p>
+    <div style="display:flex;gap:10px;flex-wrap:wrap;">
+      <a class="lbh-hero2-btn"
+        href="https://api.whatsapp.com/send/?phone=919399401826&amp;text=I+want+mota+bhai&amp;type=phone_number&amp;app_absent=0">💬
+        तुरंत आईडी पाएं</a>
+      <a class="lbh-hero2-btn"
+        style="background:linear-gradient(135deg,#f59e0b,#fbbf24)!important;color:#3f2d03!important;"
+        href="https://www.motabhai247.club/">▶️ अभी खेलें</a>
+    </div>
+  </section>
+
+  <section class="lbh-section lbh-reveal">
+    <div class="lbh-sec-head">
+      <div class="lbh-sec-title">🎁 बोनस</div>
+      <a href="https://api.whatsapp.com/send/?phone=919399401826&amp;text=I+want+mota+bhai&amp;type=phone_number&amp;app_absent=0"
+        class="lbh-sec-all">और बोनस ›</a>
+    </div>
+    <div class="lbh-bonus-row">
+      <a class="lbh-bonus-card" style="background:linear-gradient(145deg,#c2410c,#ea580c);"
+        href="https://api.whatsapp.com/send/?phone=919399401826&amp;text=I+want+mota+bhai&amp;type=phone_number&amp;app_absent=0">
+        <div class="lbh-bonus-tag">कैसिनो</div>
+        <div class="lbh-bonus-title2">स्लॉट्स वेलकम<br>बोनस + 200 फ्री स्पिन</div>
+        <div class="lbh-bonus-avail">अभी उपलब्ध</div>
+        <div class="lbh-bonus-btns">
+          <span class="lbh-bonus-btn-main">बोनस लें</span>
+          <span class="lbh-bonus-btn-out">जानकारी</span>
+        </div>
+      </a>
+      <a class="lbh-bonus-card" style="background:linear-gradient(145deg,#15803d,#16a34a);"
+        href="https://api.whatsapp.com/send/?phone=919399401826&amp;text=I+want+mota+bhai&amp;type=phone_number&amp;app_absent=0">
+        <div class="lbh-bonus-tag">स्पोर्ट्स</div>
+        <div class="lbh-bonus-title2">क्रिकेट जीत<br>बूस्ट +5%</div>
+        <div class="lbh-bonus-avail">अभी उपलब्ध</div>
+        <div class="lbh-bonus-btns">
+          <span class="lbh-bonus-btn-light">अभी क्लेम करें</span>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <section class="lbh-section lbh-reveal">
+    <div class="lbh-grid">
+      <a class="lbh-grid-item"
+        href="https://api.whatsapp.com/send/?phone=919399401826&amp;text=I+want+mota+bhai&amp;type=phone_number&amp;app_absent=0"><img
+          src="https://i.ibb.co/G4M85mCV/ab.webp" alt="" loading="lazy"></a>
+      <a class="lbh-grid-item"
+        href="https://api.whatsapp.com/send/?phone=919399401826&amp;text=I+want+mota+bhai&amp;type=phone_number&amp;app_absent=0"><img
+          src="https://i.ibb.co/0RDs4wfB/4-ARENA-FIGHTER.webp" alt="" loading="lazy"></a>
+      <a class="lbh-grid-item"
+        href="https://api.whatsapp.com/send/?phone=919399401826&amp;text=I+want+mota+bhai&amp;type=phone_number&amp;app_absent=0"><img
+          src="https://i.ibb.co/kgT1swcP/5c.webp" alt="" loading="lazy"></a>
+      <a class="lbh-grid-item"
+        href="https://api.whatsapp.com/send/?phone=919399401826&amp;text=I+want+mota+bhai&amp;type=phone_number&amp;app_absent=0"><img
+          src="https://i.ibb.co/fGQsRjRf/32c.webp" alt="" loading="lazy"></a>
+      <a class="lbh-grid-item"
+        href="https://api.whatsapp.com/send/?phone=919399401826&amp;text=I+want+mota+bhai&amp;type=phone_number&amp;app_absent=0"><img
+          src="https://i.ibb.co/1JG1j6kW/14-PARTY-NIGHT.webp" alt="" loading="lazy"></a>
+      <a class="lbh-grid-item"
+        href="https://api.whatsapp.com/send/?phone=919399401826&amp;text=I+want+mota+bhai&amp;type=phone_number&amp;app_absent=0"><img
+          src="https://i.ibb.co/FNr9nCK/6-DROP-BALL.webp" alt="" loading="lazy"></a>
+      <a class="lbh-grid-item"
+        href="https://api.whatsapp.com/send/?phone=919399401826&amp;text=I+want+mota+bhai&amp;type=phone_number&amp;app_absent=0"><img
+          src="https://i.ibb.co/G4M85mCV/ab.webp" alt="" loading="lazy"></a>
+      <a class="lbh-grid-item"
+        href="https://api.whatsapp.com/send/?phone=919399401826&amp;text=I+want+mota+bhai&amp;type=phone_number&amp;app_absent=0"><img
+          src="https://i.ibb.co/j93q7qtX/5-CRASH-CRICKET.webp" alt="" loading="lazy"></a>
+    </div>
+  </section>
+
+  <section class="lbh-section">
+    <div class="lbh-sec-head lbh-reveal">
+      <div class="lbh-sec-title">🎰 बेस्ट लाइव डीलर</div>
+      <a href="https://api.whatsapp.com/send/?phone=919399401826&amp;text=I+want+mota+bhai&amp;type=phone_number&amp;app_absent=0"
+        class="lbh-sec-all">और ›</a>
+    </div>
+    <div class="lbh-row lbh-reveal">
+      <a class="lbh-card"
+        href="https://api.whatsapp.com/send/?phone=919399401826&amp;text=I+want+mota+bhai&amp;type=phone_number&amp;app_absent=0"><img
+          src="https://i.ibb.co/bgwJkkYz/baccarat-1.webp" alt="" loading="lazy"><span
+          class="lbh-card-label">बैकारेट</span></a>
+      <a class="lbh-card"
+        href="https://api.whatsapp.com/send/?phone=919399401826&amp;text=I+want+mota+bhai&amp;type=phone_number&amp;app_absent=0"><img
+          src="https://i.ibb.co/tPsMf6NK/MAC88-YA3101-1.webp" alt="" loading="lazy"><span class="lbh-card-label">ऑटो
+          रूलेट</span></a>
+      <a class="lbh-card"
+        href="https://api.whatsapp.com/send/?phone=919399401826&amp;text=I+want+mota+bhai&amp;type=phone_number&amp;app_absent=0"><img
+          src="https://i.ibb.co/23Q2mxCW/32-Cards.webp" alt="" loading="lazy"><span class="lbh-card-label">32
+          कार्ड्स</span></a>
+    </div>
+  </section>
+
+  <section class="lbh-section">
+    <div class="lbh-sec-head lbh-reveal">
+      <div class="lbh-sec-title">🏆 स्पोर्ट्स</div>
+      <a href="https://api.whatsapp.com/send/?phone=919399401826&amp;text=I+want+mota+bhai&amp;type=phone_number&amp;app_absent=0"
+        class="lbh-sec-all">और ›</a>
+    </div>
+    <div class="lbh-sport-row lbh-reveal">
+      <a class="lbh-sport-item"
+        href="https://api.whatsapp.com/send/?phone=919399401826&amp;text=I+want+mota+bhai&amp;type=phone_number&amp;app_absent=0">
+        <div class="lbh-sport-circle">🏏</div>
+        <div class="lbh-sport-label">क्रिकेट</div>
+      </a>
+      <a class="lbh-sport-item"
+        href="https://api.whatsapp.com/send/?phone=919399401826&amp;text=I+want+mota+bhai&amp;type=phone_number&amp;app_absent=0">
+        <div class="lbh-sport-circle">⚽</div>
+        <div class="lbh-sport-label">फुटबॉल</div>
+      </a>
+      <a class="lbh-sport-item"
+        href="https://api.whatsapp.com/send/?phone=919399401826&amp;text=I+want+mota+bhai&amp;type=phone_number&amp;app_absent=0">
+        <div class="lbh-sport-circle">🖥️</div>
+        <div class="lbh-sport-label">ई-क्रिकेट</div>
+      </a>
+      <a class="lbh-sport-item"
+        href="https://api.whatsapp.com/send/?phone=919399401826&amp;text=I+want+mota+bhai&amp;type=phone_number&amp;app_absent=0">
+        <div class="lbh-sport-circle">🏀</div>
+        <div class="lbh-sport-label">बास्केटबॉल</div>
+      </a>
+      <a class="lbh-sport-item"
+        href="https://api.whatsapp.com/send/?phone=919399401826&amp;text=I+want+mota+bhai&amp;type=phone_number&amp;app_absent=0">
+        <div class="lbh-sport-circle">🎾</div>
+        <div class="lbh-sport-label">टेनिस</div>
+      </a>
+    </div>
+  </section>
+
+  <section class="lbh-section">
+    <div class="lbh-sec-head lbh-reveal">
+      <div class="lbh-sec-title">🚀 क्रैश गेम्स</div>
+      <a href="https://api.whatsapp.com/send/?phone=919399401826&amp;text=I+want+mota+bhai&amp;type=phone_number&amp;app_absent=0"
+        class="lbh-sec-all">और ›</a>
+    </div>
+    <div class="lbh-row lbh-reveal">
+      <a class="lbh-card"
+        href="https://api.whatsapp.com/send/?phone=919399401826&amp;text=I+want+mota+bhai&amp;type=phone_number&amp;app_absent=0"><img
+          src="https://i.ibb.co/FNr9nCK/6-DROP-BALL.webp" alt="" loading="lazy"><span class="lbh-card-label">ड्रॉप
+          बॉल</span></a>
+      <a class="lbh-card"
+        href="https://api.whatsapp.com/send/?phone=919399401826&amp;text=I+want+mota+bhai&amp;type=phone_number&amp;app_absent=0"><img
+          src="https://i.ibb.co/j93q7qtX/5-CRASH-CRICKET.webp" alt="" loading="lazy"><span class="lbh-card-label">क्रैश
+          क्रिकेट</span></a>
+      <a class="lbh-card"
+        href="https://api.whatsapp.com/send/?phone=919399401826&amp;text=I+want+mota+bhai&amp;type=phone_number&amp;app_absent=0"><img
+          src="https://i.ibb.co/1JG1j6kW/14-PARTY-NIGHT.webp" alt="" loading="lazy"><span class="lbh-card-label">पार्टी
+          नाइट</span></a>
+    </div>
+  </section>
+
+  <section class="lbh-section">
+    <div class="lbh-sec-head lbh-reveal">
+      <div class="lbh-sec-title">🎰 टॉप स्लॉट्स</div>
+      <a href="https://api.whatsapp.com/send/?phone=919399401826&amp;text=I+want+mota+bhai&amp;type=phone_number&amp;app_absent=0"
+        class="lbh-sec-all">सभी देखें ›</a>
+    </div>
+    <div class="lbh-row lbh-reveal">
+      <a class="lbh-card"
+        href="https://api.whatsapp.com/send/?phone=919399401826&amp;text=I+want+mota+bhai&amp;type=phone_number&amp;app_absent=0"><img
+          src="https://i.ibb.co/QFws6J7T/7-FORTUNE-GEMS.webp" alt="" loading="lazy"><span
+          class="lbh-card-label">फॉर्च्यून जेम्स</span></a>
+      <a class="lbh-card"
+        href="https://api.whatsapp.com/send/?phone=919399401826&amp;text=I+want+mota+bhai&amp;type=phone_number&amp;app_absent=0"><img
+          src="https://i.ibb.co/sdXWXNb8/2-BOOK-OF-GOLD.webp" alt="" loading="lazy"><span class="lbh-card-label">बुक ऑफ
+          गोल्ड</span></a>
+      <a class="lbh-card"
+        href="https://api.whatsapp.com/send/?phone=919399401826&amp;text=I+want+mota+bhai&amp;type=phone_number&amp;app_absent=0"><img
+          src="https://i.ibb.co/3yj5KHcz/3-THREE-POT-DRAGONS.webp" alt="" loading="lazy"><span
+          class="lbh-card-label">थ्री पॉट ड्रैगन्स</span></a>
+    </div>
+  </section>
+
+  <section class="lbh-section">
+    <div class="lbh-sec-head lbh-reveal">
+      <div class="lbh-sec-title">🎲 कैसिनो</div>
+      <a href="https://api.whatsapp.com/send/?phone=919399401826&amp;text=I+want+mota+bhai&amp;type=phone_number&amp;app_absent=0"
+        class="lbh-sec-all">और ›</a>
+    </div>
+    <div class="lbh-row lbh-reveal">
+      <a class="lbh-card"
+        href="https://api.whatsapp.com/send/?phone=919399401826&amp;text=I+want+mota+bhai&amp;type=phone_number&amp;app_absent=0"><img
+          src="https://i.ibb.co/bgwJkkYz/baccarat-1.webp" alt="" loading="lazy"><span
+          class="lbh-card-label">बैकारेट</span></a>
+      <a class="lbh-card"
+        href="https://api.whatsapp.com/send/?phone=919399401826&amp;text=I+want+mota+bhai&amp;type=phone_number&amp;app_absent=0"><img
+          src="https://i.ibb.co/cXKfXLTf/MAC88-TPTT2101.webp" alt="" loading="lazy"><span
+          class="lbh-card-label">रूलेट</span></a>
+      <a class="lbh-card"
+        href="https://api.whatsapp.com/send/?phone=919399401826&amp;text=I+want+mota+bhai&amp;type=phone_number&amp;app_absent=0"><img
+          src="https://i.ibb.co/Q22NL3T/sicbo-1.webp" alt="" loading="lazy"><span class="lbh-card-label">सिक
+          बो</span></a>
+    </div>
+  </section>
+
+  <div class="lbh-rg">जिम्मेदारी से खेलें। यह प्लेटफॉर्म 18 वर्ष और उससे अधिक उम्र के उपयोगकर्ताओं के लिए है। जुआ में
+    वित्तीय जोखिम होता है और यह लत लगा सकता है — कृपया अपनी क्षमता के अनुसार खेलें।</div>
+
+</div>
+
+<script>
+  (function () {
+    var els = document.querySelectorAll('.lbh-lp .lbh-reveal');
+    if (!('IntersectionObserver' in window)) {
+      els.forEach(function (el) { el.classList.add('lbh-in'); });
+    } else {
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('lbh-in');
+            io.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.1, rootMargin: '0px 0px -30px 0px' });
+      els.forEach(function (el) { io.observe(el); });
+    }
+
+  })();
+</script>
