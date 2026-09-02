@@ -1,4 +1,13 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-5XZ0LWED5G"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-5XZ0LWED5G');
+</script>
+
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700;800;900&amp;display=swap">
 <style>
 html, body { margin: 0 !important; padding: 0 !important; width: 100% !important; overflow-x: hidden; }
@@ -127,45 +136,69 @@ html, body { margin: 0 !important; padding: 0 !important; width: 100% !important
   -webkit-overflow-scrolling: touch;
   scroll-behavior: smooth;
 }
+
+/* ===== Sticky Header ===== */
+.lp-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 16px;
+  background: rgba(1, 10, 65, 0.92);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(100,130,255,0.12);
+}
+.lp-header-logo {
+  height: 42px;
+  width: auto;
+  display: block;
+}
+.lp-header-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.lp-header-btn {
+  padding: 8px 14px;
+  border-radius: 10px;
+  font-size: 12px;
+  font-weight: 800;
+  color: var(--lbh-gold-l);
+  background: var(--lbh-card);
+  border: 1px solid var(--lbh-border);
+  font-family: 'Figtree', sans-serif !important;
+  text-decoration: none !important;
+  transition: transform .15s, border-color .2s;
+}
+.lp-header-btn:active { transform: scale(0.92); border-color: rgba(251,191,36,0.5); }
+
 </style>
 <div class="lbh-lp">
 
-  <section class="lbh-hero2 lbh-reveal">
-    <div class="lbh-hero2-eyebrow"><span class="lbh-hero2-dash"></span>India's Trusted Exchange</div>
-    <h1 class="lbh-hero2-title">Get your verified Mota Bhai ID instantly — Deposit in 2 minutes, start from just ₹100.</h1>
-    <div class="lbh-hero2-gold">On WhatsApp in 2 Minutes</div>
-    <p class="lbh-hero2-sub">Get your verified ID in minutes and play with confidence.</p>
-    <div style="display:flex;gap:10px;flex-wrap:wrap;">
-    <a class="lbh-hero2-btn" href="https://api.whatsapp.com/send/?phone=919399401826&amp;text=I+want+mota+bhai&amp;type=phone_number&amp;app_absent=0">💬 Get Instant ID</a>
-    <a class="lbh-hero2-btn" style="background:linear-gradient(135deg,#f59e0b,#fbbf24)!important;color:#3f2d03!important;" href="https://api.whatsapp.com/send/?phone=919399401826&amp;text=I+want+mota+bhai&amp;type=phone_number&amp;app_absent=0">▶️ Play Now</a>
+  <div class="lp-header">
+    <img class="lp-header-logo" src="https://i.ibb.co/MwBh6Vs/logo-18.png" alt="Mota Bhai 247">
+    <div class="lp-header-actions">
+      
+    </div>
   </div>
+
+  <section class="lbh-hero2 lbh-reveal" style="padding:0!important;">
+    <a href="https://api.whatsapp.com/send/?phone=919399401826&amp;text=I+want+mota+bhai&amp;type=phone_number&amp;app_absent=0" style="display:block;width:100%;">
+      <img src="https://i.ibb.co/MjvkZDJ/motabhai.jpg" alt="Mota Bhai 247" style="width:100%;display:block;border-radius:0;">
+    </a>
   </section>
 
-  <section class="lbh-section lbh-reveal">
-    <div class="lbh-sec-head">
-      <div class="lbh-sec-title">🎁 Bonuses</div>
-      <a href="https://api.whatsapp.com/send/?phone=919399401826&amp;text=I+want+mota+bhai&amp;type=phone_number&amp;app_absent=0" class="lbh-sec-all">More bonuses ›</a>
-    </div>
-    <div class="lbh-bonus-row">
-      <a class="lbh-bonus-card" style="background:linear-gradient(145deg,#c2410c,#ea580c);" href="https://api.whatsapp.com/send/?phone=919399401826&amp;text=I+want+mota+bhai&amp;type=phone_number&amp;app_absent=0">
-        <div class="lbh-bonus-tag">Casino</div>
-        <div class="lbh-bonus-title2">Slots Welcome<br>Bonus + 200 FS</div>
-        <div class="lbh-bonus-avail">Available Now</div>
-        <div class="lbh-bonus-btns">
-          <span class="lbh-bonus-btn-main">Get Bonus</span>
-          <span class="lbh-bonus-btn-out">Details</span>
-        </div>
-      </a>
-      <a class="lbh-bonus-card" style="background:linear-gradient(145deg,#15803d,#16a34a);" href="https://api.whatsapp.com/send/?phone=919399401826&amp;text=I+want+mota+bhai&amp;type=phone_number&amp;app_absent=0">
-        <div class="lbh-bonus-tag">Sport</div>
-        <div class="lbh-bonus-title2">Cricket Winning<br>Boost +5%</div>
-        <div class="lbh-bonus-avail">Available Now</div>
-        <div class="lbh-bonus-btns">
-          <span class="lbh-bonus-btn-light">Claim Now</span>
-        </div>
-      </a>
+  <section class="lbh-section lbh-reveal" style="padding-top:14px;">
+    <div style="display:flex;gap:10px;flex-wrap:wrap;">
+      <a class="lbh-hero2-btn" href="https://api.whatsapp.com/send/?phone=919399401826&amp;text=I+want+mota+bhai&amp;type=phone_number&amp;app_absent=0">💬 Get Instant ID</a>
+      <a class="lbh-hero2-btn" style="background:linear-gradient(135deg,#f59e0b,#fbbf24)!important;color:#3f2d03!important;" href="https://www.motabhai247.club/">▶️ Play Now</a>
     </div>
   </section>
+
+  
 
   <section class="lbh-section lbh-reveal">
     <div class="lbh-grid">
